@@ -2,13 +2,22 @@ import "./ItemDetail.css"
 import { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
 import { listadoProductos } from "../../Data/publicaciones.js";
+import { Link } from "react-router-dom"
 
-// MIRAR QUE PASA ACA
+import ItemCount from "../ItemCount/ItemCount"
+
+// HACER FUNCION QUE NOS PERMITA TRAER INFORMACIÓN DEL Item Count
 
 function ItemDetail({itemProp}) {
 
-
-
+    const [count,setCount] = useState("")
+    // Recibir por parametro la info de ItemCount
+    const saveDataHandler = (add) =>{
+        const countData = add // Genera una nueva variable, trayendo TODO lo que viene de count
+            //id: Math.random().toString()
+        ;
+        setCount(countData)
+    }
   return (
     <div className="item-detail">
         <div className="item-detail-title"><h3>{itemProp.title}</h3></div>
@@ -24,14 +33,21 @@ function ItemDetail({itemProp}) {
             <div className="item-detail-body-right-price">
                 {itemProp.price}
             </div>
-            <div className="item-detail-body-right-btns">
-                <button>compra</button>
+            <div>
+            {count === "" ? <ItemCount stock="6" initial="1" onSaveData={saveDataHandler}/> : "Elejiste "+ count + " productos"}
             </div>
+            <div className="item-detail-body-right-btns">
+            <Link to={`/Cart`}>
+             <button >compra</button>
+             </Link>
+            
+            </div>
+         
             </div>
         </div>
     </div>
     
-  );
+  ) 
 }
 
 export default ItemDetail;

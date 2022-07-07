@@ -1,5 +1,4 @@
 import React from "react"
-import ItemCount from "../ItemCount/ItemCount"
 import { Link } from "react-router-dom"
 
 export const Item= (props) =>{
@@ -11,7 +10,6 @@ export const Item= (props) =>{
                 <h5 className="card-body">{props.title} </h5>
                 <p>{props.description}</p>
                 <p>{props.price}</p>
-                <ItemCount stock="5" initial="1" onAdd="Sumado al carrito" />
             <Link to={`/detalle/${props.publicacionId}`}>
              <button className="btn btn_ver_mas" >Ver más</button>
              </Link>

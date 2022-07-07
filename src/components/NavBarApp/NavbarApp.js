@@ -1,8 +1,7 @@
 import "./NavbarApp.css";
 import Logo from "../../assets/logo_nav2.png";
 import CartIcon from "../CartWidget/CartWidget.js";
-import {Link, NavLink} from 'react-router-dom'
-
+import {  NavLink } from "react-router-dom";
 
 function NavbarApp() {
   return (
@@ -24,28 +23,51 @@ function NavbarApp() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <NavLink activeClassName="active" className="nav-link" to="/">
-                  Inicio
+                <NavLink
+                  activeClassName="active"
+                  className="nav-link"
+                  to="/categorias/Poesia"
+                >
+                  Poesia
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink activeClassName="active" className="nav-link" to="Categoria/Cuentos">
+                <NavLink
+                  activeClassName="active"
+                  className="nav-link"
+                  to="/categorias/Cuento"
+                >
                   Cuentos
                 </NavLink>
               </li>
 
-              <a className="navbar-brand" href="/">
-                <img src={Logo} alt="Logo" id="logoNav" />
-              </a>
+                <NavLink
+                  activeClassName="active"
+                  className="navbar-brand"
+                  to="/"
+                >
+                  <img src={Logo} alt="Logo" id="logoNav" />
+                </NavLink>
 
               <li className="nav-item">
-              <NavLink activeClassName="active" className="nav-link" to="Categoria/Novela">
+                <NavLink
+                  activeClassName="active"
+                  className="nav-link"
+                  to="/categorias/Novela"
+                >
                   Novelas
-                </NavLink>              </li>
+                </NavLink>
+              </li>
               <li className="nav-item">
-              <NavLink activeClassName="active" className="nav-link" to="Categoria/Poesia">
-                  Poesías
-                </NavLink>              </li>
+                <NavLink
+                  activeClassName="active"
+                  className="nav-link"
+                  to="/categorias"
+                >
+                  Contactanos
+                </NavLink>
+              </li>
+
             </ul>
           </div>
           <div className="logoCarrito">
